@@ -99,7 +99,7 @@ const app = {
             </div>`;
 		});
 		playlist.innerHTML = htmls.join("");
-		this.setConfig("currentIndex", this.currentIndex);
+		this.setConfig("currentIndex", this.currentIndex); //render ra lại bài hát mình nghe trước đó
 	},
 	//Xử lí define property
 	defineProperty() {
@@ -191,8 +191,8 @@ const app = {
 			_this.setConfig("isRandom", _this.isRandom);
 			randomBtn.classList.toggle("active", _this.isRandom);
 		};
-		//Xử lý bật/ tắt repeat song
 
+		//Xử lý bật/ tắt repeat song
 		repeatBtn.onclick = function () {
 			_this.isRepeat = !_this.isRepeat;
 			_this.setConfig("isRepeat", _this.isRepeat);
@@ -207,6 +207,7 @@ const app = {
 				nextBtn.click();
 			}
 		};
+
 		//Xử lý khi click vào playlist
 		playlist.onclick = function (e) {
 			const songNode = e.target.closest(".song:not(.active)");

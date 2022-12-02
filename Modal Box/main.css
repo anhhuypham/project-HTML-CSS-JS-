@@ -60,7 +60,7 @@ body.open .modal{
     color: #f9f9f9;
     width: 300px;
     padding: 48px 36px;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -100%);
     border-radius: 12px;
     visibility: hidden;
     opacity: 0;
@@ -79,15 +79,12 @@ body.open .modal{
 body.open .modal-content{
     visibility: visible;
     opacity: 1;
-    animation: modalAppear 0.5s;
+    animation: modalAppear 0.3s linear forwards;
 }
 
 @keyframes modalAppear{
-    from{
-        transform: translate(-50%, 100%);
-        scale: 0.5;
-    }
     to{
+        transform: translate(-50%, -50%);
         opacity: 1;
         scale: 1;
     }

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8    " />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./main.css" />
+		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="toast"></div>
+
+		<div>
+			<div onclick="showSuccess()" class="btn btn--success">Show success toast</div>
+			<div onclick="showError()" class="btn btn--error">Show error toast</div>
+		</div>
+		<script>
+			function toast({ title, message, type, duration = 3000 }) {
+				const main = document.getElementById("toast");
+				const toast = document.createElement("div");
+				toast.classList.add("toast", `${type}`);
+
+				const icons = {
+					success: "checkmark-circle-outline",
+					error: "close-circle-outline",
+				};
+				const icon = icons[type];
+
+				const delay = (duration / 1000).toFixed(2);
+				toast.style.animation = `slideOnRight 0.3s ease, fadeOut 1s ${delay}s linear forwards`;
+
+				//Auto Romove Toast
+				const autoRemove = setTimeout(function () {
+					main.removeChild(toast);
+				}, duration + 1000);
+
+				//Click X to remove toast
+				toast.onclick = function (e) {
+					if (e.target.closest(".toast__close")) {
+						main.removeChild(toast);
+						clearTimeout(autoRemove);
+					}
+				};
+				toast.innerHTML = `
+					<div class="toast__icon">
+						<ion-icon name="${icon}"></ion-icon>
+					</div>
+					<div class="toast__body">
+						<h3 class="toast__title">${title}</h3>
+						<p class="toast__msg">${message}</p>
+					</div>
+					<div class="toast__close">
+						<ion-icon name="close-outline"></ion-icon>
+					</div>`;
+				main.appendChild(toast);
+			}
+			function showSuccess() {
+				toast({
+					title: "Success!",
+					message: "Tạo tài khoản thành công",
+					type: "success",
+					duration: 2000,
+				});
+			}
+
+			function showError() {
+				toast({
+					title: "Error!",
+					message: "Thông báo lỗi vui lòng liên hệ quản trị viên",
+					type: "error",
+					duration: 4000,
+				});
+			}
+		</script>
+	</body>
+</html>
