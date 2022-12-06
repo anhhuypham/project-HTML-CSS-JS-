@@ -1,3 +1,4 @@
+// "use strict";
 // function Validator(formSelector, options = {}) {
 // 	//Hàm lấy thẻ cha của thẻ input
 // 	function getParent(element, selector) {
@@ -225,56 +226,3 @@ function Validator(selector, options = {}) {
 		}
 	};
 }
-
-const app = (function () {
-	const cars = ["HUY"];
-	return {
-		getCar(index) {
-			return cars[index];
-		},
-		add(car) {
-			cars.push(car);
-		},
-		delete(index) {
-			cars.splice(index, 1);
-		},
-		show() {
-			for (var car of cars) {
-				console.log(car);
-			}
-		},
-	};
-})();
-
-function createLogger(namespace) {
-	return function (message) {
-		console.log(`[${namespace}]: ${message}`);
-	};
-}
-
-function createStorage(key) {
-	const store = JSON.parse(localStorage.getItem(key)) ?? {};
-	const save = () => {
-		localStorage.setItem(key, JSON.stringify(store));
-	};
-	const storage = {
-		get(key) {
-			return store[key];
-		},
-
-		set(key, value) {
-			store[key] = value;
-			save();
-		},
-
-		delete(key) {
-			delete store[key];
-			save();
-		},
-	};
-	return storage;
-}
-
-const storage1 = createStorage("fullName");
-console.log(storage1.get("fullName"));
-localStorage.removeItem("myCat");

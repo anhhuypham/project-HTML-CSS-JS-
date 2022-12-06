@@ -1,48 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="./main.css" />
-		<title>Document</title>
-	</head>
-	<body>
-		<form action="" method="post" id="form-1" class="form">
-			<h2 class="heading">Thành viên đăng kí</h2>
-			<p class="desc">
-				Cùng nhau học lập trình miễn phí tại F8 <br />
-				❤️
-			</p>
 
-			<div class="spacer"></div>
-			<div class="form-group">
-				<label for="fullname" class="form-label">Tên đầy đủ</label>
-				<input class="form-control" type="text" name="fullname" rules="required" id="fullname" placeholder="VD: Anh Huy" />
-				<span class="form-message"></span>
-			</div>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="./main.css" />
+	<title>Document</title>
+</head>
 
-			<div class="form-group">
-				<label for="email" class="form-label">Email</label>
-				<input class="form-control" type="email" name="email" rules="required|email" id="email" placeholder="VD: huy@gmail.com" />
-				<span class="form-message"></span>
-			</div>
+<body>
+	<form action="" method="post" id="form-1" class="form">
+		<h2 class="heading">Thành viên đăng kí</h2>
+		<p class="desc">
+			Cùng nhau học lập trình miễn phí tại F8 <br />
+			❤️
+		</p>
 
-			<div class="form-group">
-				<label for="password" class="form-label">Mật khẩu</label>
-				<input class="form-control" type="password" rules="required|min:6" name="password" id="password" placeholder="Nhập mật khẩu" />
-				<span class="form-message"></span>
-			</div>
+		<div class="spacer"></div>
+		<div class="form-group">
+			<label for="fullname" class="form-label">Tên đầy đủ</label>
+			<input class="form-control" type="text" name="fullname" rules="required" id="fullname"
+				placeholder="VD: Anh Huy" />
+			<span class="form-message"></span>
+		</div>
 
-			<button class="form-submit">Đăng ký</button>
-		</form>
-	</body>
-	<script src="./validator.js"></script>
-	<script>
-		Validator("#form-1", {
-			onSubmit: function (data) {
-				console.log(data);
-			},
-		});
-	</script>
+		<div class="form-group">
+			<label for="email" class="form-label">Email</label>
+			<input class="form-control" type="email" name="email" rules="required|email" id="email"
+				placeholder="VD: huy@gmail.com" />
+			<span class="form-message"></span>
+		</div>
+
+		<div class="form-group">
+			<label for="password" class="form-label">Mật khẩu</label>
+			<input class="form-control" type="password" rules="required|min:6" name="password" id="password"
+				placeholder="Nhập mật khẩu" />
+			<span class="form-message"></span>
+		</div>
+		<button class="form-submit">Đăng ký</button>
+	</form>
+
+</body>
+<script src="./validator.js"></script>
+<script>
+	Validator("#form-1", {
+		onSubmit: function (data) {
+			console.log(data);
+		},
+	});
+</script>
+
 </html>
