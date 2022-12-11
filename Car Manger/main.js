@@ -67,9 +67,9 @@ const module = {
 	},
 };
 
-// console.log(module.getX());
-// const showX = module.getX.bind(module, 5, 6);
-// console.log(showX(3, 4));
+console.log(module.getX());
+const showX = module.getX.bind(module, 1, 2);
+console.log(showX(3, 4));
 
 ("use strict"); // prevent `this` from being boxed into the wrapper object
 
@@ -132,3 +132,39 @@ const app = (function () {
 })();
 
 app.init();
+
+const numbers = [5, 6, 2, 3, 7];
+
+const max = Math.max.apply(this, numbers);
+
+// console.log(max);
+// expected output: 7
+
+const min = Math.min.apply(this, numbers);
+
+// console.log(min);
+// expected output: 2
+
+function Animal(name, weight) {
+	this.name = name;
+	this.weight = weight;
+}
+
+function Parrot() {
+	Animal.call(this, ...arguments);
+	this.speak = function () {
+		console.log("Nhà có khách");
+	};
+	// console.log(arguments);
+}
+
+var parrot = new Parrot("Suyndy", 342);
+parrot.speak();
+console.log(parrot);
+
+function show() {
+	// const arr = Array.prototype.slice.call(arguments);
+	// const arr = Array.from(arguments);
+	const arr = [...arguments];
+	console.log(arr);
+}
