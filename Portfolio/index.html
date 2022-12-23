@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./responsive.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+        <div class="header">
+            <div class="header__nav">
+                <div class="header__nav-logo">
+                    <img src=" ./img/logo.svg" alt="">
+                </div>
+                <ul class="header__list hidden-on-mobile">
+                    <li class="header__list-item"><a href="#works" class="header__item-link">Work</a></li>
+                    <li class="header__list-item"><a href="#" class="header__item-link">About</a></li>
+                    <li class="header__list-item"><a href="#things" class="header__item-link">Resume</a></li>
+                    <li class="header__list-item"><button class="btn"><a href="#footer">Contact</a></button></li>
+                </ul>
+                <div class="nav-mobile hidden-on-tablet hidden-on-pc">
+                    <div class="overlay" onclick="toggle()"></div>
+                    <ul class="header__list">
+                        <li class="header__list-item"><a href="#works" class="header__item-link">Work</a></li>
+                        <li class="header__list-item"><a href="#" class="header__item-link">About</a></li>
+                        <li class="header__list-item"><a href="#things" class="header__item-link">Resume</a></li>
+                        <li class="header__list-item"><button class="btn"><a href="#footer">Contact</a></button></li>
+                    </ul>
+                </div>
+                <div class="header-bar hidden-on-tablet hidden-on-pc" onclick="toggle()">
+                    <svg fill=" #fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <path
+                            d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+                    </svg>
+                </div>
+            </div>
+            <div class="header__banner-img">
+                <img src="./img/banner-img.png" alt="">
+            </div>
+            <div class="header__introduce">
+                <h2>Hello, I'm Lisa</h2>
+                <p>Multifunctional designer/developer based in Bath - a traditionally trained designer who codes</p>
+                <button class="btn">View Work</button>
+                <div class="header__introduce-logo">
+                    <ion-icon name="logo-behance"></ion-icon>
+                    <ion-icon name="logo-dribbble"></ion-icon>
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                </div>
+            </div>
+        </div>
+        <div id="things" class="things">
+            <div class="things-decor-l">
+                <img src="./img/things-dec-l.png" alt="">
+            </div>
+            <h2 class="things-title">Things I Do</h2>
+            <div class="things-list">
+                <div class="item">
+                    <div class="item-img">
+                        <img src="./img/things-item-1.png" alt="">
+                    </div>
+                    <div class="item-content">
+                        <h3>Strategy</h3>
+                        <p>There's no style over subtance here. I bring together form and the function to create
+                            something
+                            that tooks good and perform brillantly. Simple</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-img">
+                        <img src="./img/things-item-2.png" alt="">
+                    </div>
+                    <div class="item-content">
+                        <h3>Imfomation Architecture</h3>
+                        <p>It's about organizing the content and flow of a website based on research and planning.
+                            Eventually i come up with a structure/design that balances the user;s desires with the
+                            bussiness's needs</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-img">
+                        <img src="./img/things-item-3.png" alt="">
+                    </div>
+                    <div class="item-content">
+                        <h3>Design & Development</h3>
+                        <p>As a designer and developer. I understand the perfect user interface should look good and
+                            work
+                            even better. Alongside my clients, I uncover problems and solve them. In short, I create
+                            bolder
+                            online expirences</p>
+                    </div>
+                </div>
+            </div>
+            <div class="things-decor-r">
+                <img src="./img/things-dec-r.png" alt="">
+            </div>
+        </div>
+        <div id="works" class="works">
+            <h2 class="works-title">Recent Work</h2>
+            <div class="works__item">
+                <div class="works__item-img">
+                    <img src="./img/work-1.png" alt="">
+                </div>
+                <div class="works__item-img">
+                    <img src="./img/work-2.png" alt="">
+                </div>
+                <div class="works__item-img">
+                    <img src="./img/work-3.png" alt="">
+                </div>
+                <div class="works__item-img">
+                    <img src="./img/work-4.png" alt="">
+                </div>
+            </div>
+            <div class="works-decor-l">
+                <img src="./img/work-dec.png" alt="">
+            </div>
+            <div class="works-decor-r">
+                <img src="./img/work-dec.png" alt="">
+            </div>
+            <button class="btn works-btn">View Work</button>
+        </div>
+        <div id="footer" class="footer">
+            <div class="footer-img">
+                <img src="./img/footer-img.png" alt="">
+            </div>
+            <div class="footer-content">
+                <h2>Ready to make something amazing?</h2>
+                <button class="btn">Start A New Project</button>
+                <div class="footer-logo">
+                    <ion-icon name="logo-behance"></ion-icon>
+                    <ion-icon name="logo-dribbble"></ion-icon>
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                </div>
+            </div>
+            <div class="footer-decor">
+                <img src="./img/things-dec-l.png" alt="">
+            </div>
+        </div>
+    </div>
+    <script>
+        const navMobile = document.querySelector('.nav-mobile')
+        function toggle() {
+            navMobile.classList.toggle('toggle')
+        }
+        console.log(navMobile);
+    </script>
+</body>
+
+</html>

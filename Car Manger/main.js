@@ -25,18 +25,20 @@ function createLogger(namespace) {
 }
 
 function createStorage(key) {
-	const store = localStorage.getItem(key) ?? {};
+	const store = JSON.parse(localStorage.getItem(key)) ?? {};
 
 	const save = () => {
 		localStorage.setItem(key, JSON.stringify(store));
 	};
+
 	return {
 		add(key, value) {
 			store[key] = value;
 			save();
 		},
-		remove(key) {
-			delete store[key];
+		delete(index) {
+			delete store[index];
+			save();
 		},
 	};
 }
@@ -168,3 +170,18 @@ function show() {
 	const arr = [...arguments];
 	console.log(arr);
 }
+
+const o1 = {
+	name: "Huy",
+};
+
+const o2 = {
+	...o1,
+	name: "Kha",
+};
+
+console.log(o2);
+
+console.dir(document.querySelector("#submit").offsetHeight);
+const d = new Date();
+window.open("https://teams.microsoft.com/_?culture=vi-vn&country=vn#/school/classroom/General?threadId=19:-VtihsvZ6TpG_uq1x_I2Ixu9ef6m8YtvxI58To8iXvg1@thread.tacv2&ctx=channel&isTeamLevelApp=true");

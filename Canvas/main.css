@@ -1,0 +1,49 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+body {
+  min-height: 100vh;
+}
+
+.tool{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    background-color: #4682b4;
+}
+.tool-one button{
+    width: 50px;
+    height: 50px;
+}
+.tool-two{
+    display: flex;
+    align-items: center;
+}
+.tool-two button{
+    width: 50px;
+    height: 50px;
+    margin: 0 6px;
+}
+.save{
+    width: 50px;
+    height: 100%;
+}
+.tool-two button svg{
+    width: 100%;
+    height: 100%;
+}

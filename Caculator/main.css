@@ -1,0 +1,146 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-color: #FFFFD0;
+    height: 100vh;
+    position: relative;
+}
+#main{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+}
+.result{
+
+}
+
+.caculator{
+    display: flex;
+    /* flex-direction: row; */
+}
+
+.number{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #eee;
+}
+
+.number div{
+    margin: 8px 8px;
+    width: calc(100% / 3 - 16px);
+}
+
+.btn{
+    font-size: 25px;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid #999;
+    cursor: pointer;
+}
+
+.operation{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #eee;
+}
+
+.operation div{
+    margin: 8px 8px;
+    text-align: right;
+    width: calc(100% / 2 - 16px);
+}
+
+.result{
+    background-color: #eee;
+    font-size: 28px;
+    padding: 16px 16px;
+    border-bottom: 2px solid #999;
+}
+
+ion-icon{
+    font-size: 24px;
+    cursor: pointer;
+    display: block;
+}
+
+.icon-mode{
+    position: absolute;
+    right: 0;
+    transform: translateY(-120%);
+    padding-bottom: 10px;
+}
+
+#main.dark-mode .number, #main.dark-mode .operation{
+    background-color: black;
+}
+
+#main.dark-mode .btn{
+    color: #fff;
+    background-color: black;
+    border: 1px solid #E6DDC4;
+}
+
+#main.dark-mode .result{
+    background-color: black;
+    color: #fff;
+}
+
+.dark{
+    display: none;
+}
+
+#main.dark-mode .light{
+    display: none;
+}
+
+#main.dark-mode .dark{
+    display: block;
+}
+
+.history{
+    position: relative;
+    display: inline-block;
+    padding-left: 8px;
+    z-index: 1;
+    margin: 4px 0 12px 0;
+}
+
+.list-history{
+    position: absolute;
+    background-color: #678983;
+    border-radius: 6px;
+    width: 200px;
+    transform: translateX(calc(-110% - 10px));
+    top: 0px;
+    display: none;
+}
+
+.list-history p {
+    padding: 2px 12px;
+    color: #fff;
+}
+
+.list-history.toggle {
+    display: block;
+}
+
+.list-history.toggle::after{
+    display: block;
+}
+
+.clear-history{
+    position: absolute;
+    padding: 4px;
+    top: 0;
+    left: 50px;
+    width: 100px;
+}
